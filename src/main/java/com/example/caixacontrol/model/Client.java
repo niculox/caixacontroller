@@ -1,40 +1,25 @@
 package com.example.caixacontrol.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+@Entity
+@Table(name = "CLIENT")
+public class Client extends AbstractEntity<Long>{
 
-public class Client {
-
-    @Autowired
-    private Long id;
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private String cpf;
+
+    @Column(nullable = false)
     private String phone;
-    
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getCpf() {
-        return cpf;
-    }
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-    public String getPhone() {
-        return phone;
-    }
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
 
     
 }

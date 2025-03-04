@@ -1,36 +1,28 @@
 package com.example.caixacontrol.model;
 
-public class Entry {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+@Table(name = "ENTRY")
+public class Entry extends AbstractEntity<Long>{
     
+    @Column(nullable = false)
     private Client client;
+
+    @Column(nullable = false)
     private float value;
+
+    @Column(nullable = false)
     private String entryType;
+
+    @Column(nullable = false)
     private String date;
-    
-    public Client getClient() {
-        return client;
-    }
-    public void setClient(Client client) {
-        this.client = client;
-    }
-    public float getValue() {
-        return value;
-    }
-    public void setValue(float value) {
-        this.value = value;
-    }
-    public String getEntryType() {
-        return entryType;
-    }
-    public void setEntryType(String entryType) {
-        this.entryType = entryType;
-    }
-    public String getDate() {
-        return date;
-    }
-    public void setDate(String date) {
-        this.date = date;
-    }
 
     
 

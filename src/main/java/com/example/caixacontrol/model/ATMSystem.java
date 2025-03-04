@@ -2,22 +2,22 @@ package com.example.caixacontrol.model;
 
 import java.util.List;
 
-public class ATMSystem {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+@Entity
+@Table(name = "ATM_SYSTEM")
+public class ATMSystem extends AbstractEntity<Long>{
+
+    @Column(nullable = false)
     private List<Entry> entries;
-    private float output;
 
-    public List<Entry> getEntries() {
-        return entries;
-    }
-    public void setEntries(List<Entry> entries) {
-        this.entries = entries;
-    }
-    public float getOutput() {
-        return output;
-    }
-    public void setOutput(float output) {
-        this.output = output;
-    }
+    @Column(nullable = false)
+    private float output;
     
 }
