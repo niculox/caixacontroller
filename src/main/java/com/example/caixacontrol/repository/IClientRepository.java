@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.caixacontrol.model.Client;
 
 public interface IClientRepository extends JpaRepository<Client, Long>{
-    List<Client> findByIdClients(Long idClients);
+    List<Client> findByName(String name);
 }
