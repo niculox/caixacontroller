@@ -15,7 +15,7 @@ public class Entry extends AbstractEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idEntry;
 
     @ManyToOne
     @JoinColumn(name = "client_id")

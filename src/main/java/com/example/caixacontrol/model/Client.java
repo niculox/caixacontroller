@@ -17,7 +17,7 @@ public class Client extends AbstractEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long clienteId;
 
     @Column(nullable = false)
     private String name;
@@ -29,6 +29,6 @@ public class Client extends AbstractEntity<Long> {
     private String phone;
 
     public Long getId() {
-        return id;
+        return clienteId;
     }
 }
