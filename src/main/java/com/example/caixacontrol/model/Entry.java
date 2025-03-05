@@ -1,10 +1,11 @@
 package com.example.caixacontrol.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -12,18 +13,24 @@ import lombok.Setter;
 @Table(name = "ENTRY")
 public class Entry extends AbstractEntity<Long>{
     
-    @Column(nullable = false)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "client_id")
     private Client client;
 
     @Column(nullable = false)
-    private float value;
+    private BigDecimal amount;
 
     @Column(nullable = false)
     private String entryType;
 
     @Column(nullable = false)
-    private String date;
+    private LocalDateTime date;
 
-    
-
+    public Long getClientId() {
+        return client != null ? client.getId() : null;
+    }
 }
