@@ -1,8 +1,5 @@
 package com.example.caixacontrol.service;
 
-import java.util.*;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
 
@@ -10,4 +7,36 @@ import jakarta.transaction.Transactional;
 @Service
 public class ATMSystemService {
     
+    public void depositar(){
+        
+    }
+    
+    public void sacar(){
+        
+    }
+    
+    public void consultarSaldo(){
+        
+    }
+    
+    public void consultarExtrato(){
+        
+    }
+    
+    public void consultarExtratoPorPeriodo(){
+        
+    }
+    
+    public void consultarExtratoPorTipo(){
+        
+    }
+    
+    public void consultarExtratoPorCliente(){
+        
+    }
+    
+    public void consultarExtratoPorData(){
+        
+    }
+
 }
