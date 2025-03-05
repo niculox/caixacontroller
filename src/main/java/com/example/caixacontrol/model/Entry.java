@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 @Setter
 @Entity
 @Table(name = "ENTRY")
-public class Entry extends AbstractEntity<Long>{
-    
+public class Entry extends AbstractEntity<Long> {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,6 +29,9 @@ public class Entry extends AbstractEntity<Long>{
 
     @Column(nullable = false)
     private LocalDateTime date;
+
+    @Column
+    private String description;
 
     public Long getClientId() {
         return client != null ? client.getId() : null;
