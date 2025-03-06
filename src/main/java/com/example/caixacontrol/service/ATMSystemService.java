@@ -44,7 +44,6 @@ public class ATMSystemService {
         System.out.println("Saldo atual: " + totalCaixa);
     }
 
-
     public void consultarEntradasPorTipo(String tipo) {
         if (tipo == null || tipo.isEmpty()) {
             throw new IllegalArgumentException("O tipo de entrada não pode ser nulo ou vazio.");
@@ -62,8 +61,6 @@ public class ATMSystemService {
         }
     }
 
-
-    //resolver
     public void consultarEntradasPorCliente(Long cliente) {
         if (cliente == null) {
             throw new IllegalArgumentException("O cliente não pode ser nulo.");
