@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -28,7 +27,7 @@ public class Entry extends AbstractEntity<Long> {
     private String entryType;
 
     @Column(nullable = false)
-    private LocalDateTime date;
+    private String date;
 
     @Column
     private String description;
