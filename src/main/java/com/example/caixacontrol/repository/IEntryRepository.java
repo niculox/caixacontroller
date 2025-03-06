@@ -1,12 +1,15 @@
 package com.example.caixacontrol.repository;
 
-import java.util.Date;
-import java.util.List;
-import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.caixacontrol.model.Entry;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface IEntryRepository extends JpaRepository<Entry, Long>{
+import java.sql.Date;
+import java.util.List;
+
+@Repository
+public interface IEntryRepository extends JpaRepository<Entry, Long> {
     List<Entry> findByClientId(Long clientId);
     List<Entry> findByDate(Date date);
-    List<Entry> findByEntryType(String type);
+    List<Entry> findByEntryType(String entryType);
 }

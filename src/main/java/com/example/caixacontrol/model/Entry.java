@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 @Table(name = "ENTRY")
 public class Entry extends AbstractEntity<Long> {
 
-    @Id
+    @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEntry;
 

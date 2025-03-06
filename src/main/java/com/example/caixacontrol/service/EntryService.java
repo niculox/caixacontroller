@@ -5,7 +5,9 @@ import java.sql.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.example.caixacontrol.repository.IEntryRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class EntryService {
     
     @Autowired
@@ -42,8 +44,4 @@ public class EntryService {
     public List<Entry> buscarPorTipo(String type){
         return entryRepository.findByEntryType(type);
     }
-
-
-
-
 }

@@ -1,5 +1,6 @@
 package com.example.caixacontrol.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.caixacontrol.model.Entry;
@@ -16,6 +17,7 @@ public class ATMSystemService {
     private float totalCaixa = 0;
     private final EntryService entryService;
 
+    @Autowired
     public ATMSystemService(EntryService entryService) {
         this.entryService = entryService;
     }
