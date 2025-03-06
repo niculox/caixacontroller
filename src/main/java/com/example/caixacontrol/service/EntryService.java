@@ -40,7 +40,7 @@ public class EntryService {
     }
 
     public List<Entry> buscarPorTipo(String type){
-        return entryRepository.findByType(type);
+        return entryRepository.findByEntryType(type);
     }
 
 

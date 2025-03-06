@@ -8,5 +8,5 @@ import com.example.caixacontrol.model.Entry;
 public interface IEntryRepository extends JpaRepository<Entry, Long>{
     List<Entry> findByClientId(Long clientId);
     List<Entry> findByDate(Date date);
-    List<Entry> findByType(String type);
+    List<Entry> findByEntryType(String type);
 }
