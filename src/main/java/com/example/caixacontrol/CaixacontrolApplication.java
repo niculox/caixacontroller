@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CaixacontrolApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CaixacontrolApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(CaixacontrolApplication.class, args);
+    }
 }
