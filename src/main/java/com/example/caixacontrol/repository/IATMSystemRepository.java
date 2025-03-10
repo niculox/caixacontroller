@@ -1,13 +1,9 @@
 package com.example.caixacontrol.repository;
 
-import java.util.Date;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.caixacontrol.model.ATMSystem;
-import com.example.caixacontrol.model.Client;
 
 public interface IATMSystemRepository extends JpaRepository<ATMSystem, Long>{
-    List<ATMSystem> findByClientId(Client client);
-    List<ATMSystem> findByDate(Date date);
-    List<ATMSystem> findByType(String type);
+    List<ATMSystem> findByOutput(float output);
 }
