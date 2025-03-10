@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface IEntryRepository extends JpaRepository<Entry, Long> {
-    List<Entry> findByClientId(Long clientId);
+    List<Entry> findByClientId(Long client);
     List<Entry> findByDate(Date date);
     List<Entry> findByEntryType(String entryType);
 }

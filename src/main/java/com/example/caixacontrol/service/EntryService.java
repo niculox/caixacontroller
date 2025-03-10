@@ -33,8 +33,8 @@ public class EntryService {
         return entryRepository.findAll();
     }
 
-    public List<Entry> buscarPorCliente(Long clientId){
-        return entryRepository.findByClientId(clientId);
+    public List<Entry> buscarPorCliente(Long client){
+        return entryRepository.findByClientId(client);
     }
 
     public List<Entry> buscarPorData(Date date){

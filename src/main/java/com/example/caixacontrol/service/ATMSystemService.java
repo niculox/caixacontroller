@@ -63,17 +63,17 @@ public class ATMSystemService {
         }
     }
 
-    public void consultarEntradasPorCliente(Long cliente) {
-        if (cliente == null) {
+    public void consultarEntradasPorCliente(Long client) {
+        if (client == null) {
             throw new IllegalArgumentException("O cliente não pode ser nulo.");
         }
 
-        List<Entry> entradasFiltradas = entryService.buscarPorCliente(cliente); 
+        List<Entry> entradasFiltradas = entryService.buscarPorCliente(client); 
 
         if (entradasFiltradas.isEmpty()) {
-            System.out.println("Nenhuma entrada encontrada para o cliente: " + cliente);
+            System.out.println("Nenhuma entrada encontrada para o cliente: " + client);
         } else {
-            System.out.println("Entradas do cliente " + cliente + ":");
+            System.out.println("Entradas do cliente " + client + ":");
             for (Entry entrada : entradasFiltradas) {
                 System.out.println(entrada);
             }
