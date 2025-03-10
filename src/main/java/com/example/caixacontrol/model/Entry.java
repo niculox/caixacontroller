@@ -13,8 +13,9 @@ import java.math.BigDecimal;
 public class Entry extends AbstractEntity<Long> {
 
     @Id
+    @Column(nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idEntry;
+    private Long id;
 
     @OneToOne
     @JoinColumn(name = "client_id")

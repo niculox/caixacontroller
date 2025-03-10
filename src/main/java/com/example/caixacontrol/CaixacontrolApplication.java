@@ -9,4 +9,5 @@ public class CaixacontrolApplication {
     public static void main(String[] args) {
         SpringApplication.run(CaixacontrolApplication.class, args);
     }
+	
 }
