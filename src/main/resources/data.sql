@@ -5,11 +5,11 @@ CREATE TABLE IF NOT EXISTS CLIENT(
     phone VARCHAR(20) NOT NULL
 );
 
-CREATE TABLE ENTRY (
+CREATE TABLE IF NOT EXISTS ENTRY(
     id INT AUTO_INCREMENT,
     client_id INT,
     amount DECIMAL(10, 2) NOT NULL,
     date VARCHAR(10) NOT NULL,
     description TEXT,
-    FOREIGN KEY (client_id) REFERENCES Client(clientId)
+    FOREIGN KEY (client_id) REFERENCES Client(id)
 );
