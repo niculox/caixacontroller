@@ -8,7 +8,6 @@ import com.example.caixacontrol.model.Entry;
 
 import jakarta.transaction.Transactional;
 
-import java.sql.Date;
 import java.util.List;
 
 @Transactional
@@ -81,7 +80,7 @@ public class ATMSystemService {
         }
     }
 
-    public void consultarEntradasPorData(Date data) {
+    public void consultarEntradasPorData(String data) {
         if (data == null) {
             throw new IllegalArgumentException("A data não pode ser nula.");
         }

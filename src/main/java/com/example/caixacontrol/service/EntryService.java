@@ -2,7 +2,6 @@ package com.example.caixacontrol.service;
 
 import com.example.caixacontrol.model.Client;
 import com.example.caixacontrol.model.Entry;
-import java.sql.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.example.caixacontrol.repository.IEntryRepository;
@@ -38,7 +37,7 @@ public class EntryService {
         return entryRepository.findByClient(client);
     }
 
-    public List<Entry> buscarPorData(Date date){
+    public List<Entry> buscarPorData(String date){
         return entryRepository.findByDate(date);
     }
 
