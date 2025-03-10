@@ -3,6 +3,7 @@ package com.example.caixacontrol.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.caixacontrol.model.Client;
 import com.example.caixacontrol.model.Entry;
 
 import jakarta.transaction.Transactional;
@@ -63,7 +64,7 @@ public class ATMSystemService {
         }
     }
 
-    public void consultarEntradasPorCliente(Long client) {
+    public void consultarEntradasPorCliente(Client client) {
         if (client == null) {
             throw new IllegalArgumentException("O cliente não pode ser nulo.");
         }

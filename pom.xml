@@ -42,7 +42,6 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependencyManagement>
-		<dependencies>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
@@ -50,8 +49,7 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-		</dependencies>
-</dependencyManagement>
+		</dependencyManagement>
 	</dependencies>
 	<build>
 		<plugins>

@@ -1,5 +1,6 @@
 package com.example.caixacontrol.service;
 
+import com.example.caixacontrol.model.Client;
 import com.example.caixacontrol.model.Entry;
 import java.sql.Date;
 import java.util.List;
@@ -33,8 +34,8 @@ public class EntryService {
         return entryRepository.findAll();
     }
 
-    public List<Entry> buscarPorCliente(Long client){
-        return entryRepository.findByClientId(client);
+    public List<Entry> buscarPorCliente(Client client){
+        return entryRepository.findByClient(client);
     }
 
     public List<Entry> buscarPorData(Date date){
