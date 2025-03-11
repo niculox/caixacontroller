@@ -17,8 +17,8 @@ public class ClientService {
     @Autowired 
     private IClientRepository clientRepository;
 
-    public void salvar(Client client){
-        clientRepository.save(client);
+    public Client salvar(Client client) {
+        return clientRepository.save(client); 
     }
 
     public void editar(Client client){
