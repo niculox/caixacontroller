@@ -27,8 +27,5 @@ public class Client extends AbstractEntity<Long> {
 
     @Column(nullable = false)
     private String phone;
-
-    public Long getId() {
-        return id;
-    }
+    
 }
