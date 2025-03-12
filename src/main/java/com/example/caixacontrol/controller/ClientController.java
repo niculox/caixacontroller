@@ -4,7 +4,9 @@ import java.net.URI;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,6 +27,7 @@ public class ClientController {
         this.clientService = clientService;
     }
 
+    //cria um novo cliente
     @PostMapping
     public ResponseEntity<?> create(@RequestBody Client client, BindingResult result) {
         if (result.hasErrors()) {
@@ -40,10 +43,32 @@ public class ClientController {
         return ResponseEntity.created(location).body(clientCreated);
     }
 
+    //busca um cliente por id
     @GetMapping("/{id}")
     public ResponseEntity<Client> findById(@PathVariable Long id) {
         var client = clientService.buscarPorId(id);
         return ResponseEntity.ok(client);
+    }
+
+    //atualiza um cliente
+    @PatchMapping("/{id}")
+    public ResponseEntity<Client> update(@PathVariable Long id, @RequestBody Client client) {
+        client.setId(id);
+        clientService.editar(client);
+        return ResponseEntity.ok(client);
+    }
+
+    //busca todos os clientes
+    @GetMapping
+    public ResponseEntity<?> findAll() {
+        return ResponseEntity.ok(clientService.buscarTodos());
+    }
+
+    //deleta um cliente
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
+        clientService.excluir(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
