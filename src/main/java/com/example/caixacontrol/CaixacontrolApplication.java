@@ -10,5 +10,5 @@ public class CaixacontrolApplication {
         SpringApplication.run(CaixacontrolApplication.class, args);
 		System.out.println("Hello, World! O sistema está funcionando!");
     }
- 
+
 }

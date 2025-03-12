@@ -13,8 +13,8 @@ public class EntryService {
     @Autowired
     private IEntryRepository entryRepository;
 
-    public void salvar(Entry entry){
-        entryRepository.save(entry);
+    public Entry salvar(Entry entry){
+       return entryRepository.save(entry);
     }
 
     public void editar(Entry entry){
