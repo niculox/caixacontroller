@@ -1,6 +1,5 @@
 package com.example.caixacontrol.service;
 
-import com.example.caixacontrol.model.Client;
 import com.example.caixacontrol.model.Entry;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +32,7 @@ public class EntryService {
         return entryRepository.findAll();
     }
 
-    public List<Entry> buscarPorCliente(Client client){
+    public List<Entry> buscarPorCliente(String client){
         return entryRepository.findByClient(client);
     }
 

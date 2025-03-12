@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import com.example.caixacontrol.model.Client;
 import com.example.caixacontrol.model.Entry;
 import com.example.caixacontrol.service.EntryService;
 
@@ -26,7 +25,7 @@ public class EntryController {
         this.entryService = entryService;
     }
 
-    //cria uma nova entrada
+    //cria uma nova entrada (RESOLVER ENTRADA DO CLIENTE NULL)
     @PostMapping("/post")
     public ResponseEntity<?> create(@RequestBody Entry entry, BindingResult result) {
         if (result.hasErrors()) {
@@ -71,10 +70,10 @@ public class EntryController {
     }
 
     //busca entradas por cliente
-    @GetMapping("/getByClient/{id}")
-    public ResponseEntity<?> findByClient(@PathVariable Client client) {
-        return ResponseEntity.ok(entryService.buscarPorCliente(client));
-    }
+    //@GetMapping("/getByClient/{client}")
+    // public ResponseEntity<?> findByClient(String client) {
+    //    return ResponseEntity.ok(entryService.buscarPorCliente(client));
+    //}
 
     //busca entradas por data
     @GetMapping("/getByDate/{date}")

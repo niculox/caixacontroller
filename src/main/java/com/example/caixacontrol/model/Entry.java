@@ -24,7 +24,7 @@ public class Entry extends AbstractEntity<Long> {
     @Column(nullable = false)
     private BigDecimal amount;
 
-    @Column(nullable = false)
+    @Column(name = "entry_type", nullable = false)
     private String entryType;
 
     @Column(nullable = false)

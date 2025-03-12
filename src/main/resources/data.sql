@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS ENTRY(
     client_id INT,
     amount DECIMAL(10, 2) NOT NULL,
     date VARCHAR(10) NOT NULL,
+    entry_type VARCHAR(255) NOT NULL,
     description TEXT,
     FOREIGN KEY (client_id) REFERENCES Client(id)
 );
