@@ -1,8 +1,6 @@
 package com.example.caixacontrol.controller;
 
 import java.net.URI;
-import java.security.KeyStore.Entry;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
 import com.example.caixacontrol.model.Client;
+import com.example.caixacontrol.model.Entry;
 import com.example.caixacontrol.service.EntryService;
 
 @RestController
@@ -89,6 +87,5 @@ public class EntryController {
     public ResponseEntity<?> findByType(@PathVariable String type) {
         return ResponseEntity.ok(entryService.buscarPorTipo(type));
     }
-
 
 }
