@@ -28,18 +28,19 @@ public class EntryController {
     //cria uma nova entrada (RESOLVER ENTRADA DO CLIENTE NULL)
     @PostMapping("/post")
     public ResponseEntity<?> create(@RequestBody Entry entry, BindingResult result) {
-        if (result.hasErrors()) {
-            return ResponseEntity.badRequest().body(result.getAllErrors());
+
+        if (entry.getClientId() == null) {
+            return ResponseEntity.badRequest().body("Client ID cannot be null");
         }
 
         Entry entryCreated = entryService.salvar(entry);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(entryCreated.getId())
-                .toUri();
- 
+            .path("/{id}")
+            .buildAndExpand(entryCreated.getId())
+            .toUri();
+
         return ResponseEntity.created(location).body(entryCreated);
-    }
+        }
 
     //busca uma entrada por id
     @GetMapping("/get/{id}")
