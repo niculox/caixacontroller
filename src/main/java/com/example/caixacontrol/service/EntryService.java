@@ -32,10 +32,6 @@ public class EntryService {
         return entryRepository.findAll();
     }
 
-    public List<Entry> buscarPorNome(String nome){
-        return entryRepository.findByNome(nome);
-    }
-
     public List<Entry> buscarPorData(String date){
         return entryRepository.findByDate(date);
     }

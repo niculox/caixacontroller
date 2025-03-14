@@ -8,7 +8,6 @@ import java.util.List;
 
 @Repository
 public interface IEntryRepository extends JpaRepository<Entry, Long> {
-    List<Entry> findByNome(String nome);
     List<Entry> findByDate(String date);
     List<Entry> findByEntryType(String entryType);
 }
