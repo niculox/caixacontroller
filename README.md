@@ -3,8 +3,6 @@
 <<<<<<< HEAD
 CaixaController é um projeto Spring Boot para gerenciar entradas financeiras. Ele fornece uma API RESTful para criar, buscar, atualizar e excluir entradas financeiras, além de buscar entradas por data e tipo.
 =======
-## Diagrama de Classes Inicial
->>>>>>> 3d9ffa3247a24cd1177308882534a1a078a76219
 
 ## Funcionalidades
 
