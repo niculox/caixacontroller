@@ -2,7 +2,6 @@ package com.example.caixacontrol.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,24 +37,6 @@ public class ATMSystemController {
     public ResponseEntity<?> balance() {
         atmSystemService.consultarSaldo();
         return ResponseEntity.ok().build();
-    }
-
-    //consulta entradas por tipo
-    @GetMapping("/getByType/{type}")
-    public ResponseEntity<?> findByType(@PathVariable String type) {
-        return ResponseEntity.ok(atmSystemService.consultarEntradasPorTipo(type));
-    }
-
-    //consulta entradas por cliente
-    @GetMapping("/getByClient/{client}")
-    public ResponseEntity<?> findByClient(@PathVariable String client) {
-        return ResponseEntity.ok(atmSystemService.consultarEntradasPorCliente(client));
-    }
-
-    //consulta entradas por data
-    @GetMapping("/getByDate/{date}")
-    public ResponseEntity<?> findByDate(@PathVariable String date) {
-        return ResponseEntity.ok(atmSystemService.consultarEntradasPorData(date));
     }
 
 }
