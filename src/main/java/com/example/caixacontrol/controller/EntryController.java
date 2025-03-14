@@ -71,10 +71,10 @@ public class EntryController {
     }
 
     //busca entradas por cliente
-    //@GetMapping("/getByClient/{client}")
-    // public ResponseEntity<?> findByClient(String client) {
-    //    return ResponseEntity.ok(entryService.buscarPorCliente(client));
-    //}
+    @GetMapping("/getByClient/{client}")
+    public ResponseEntity<?> findByNome(String nome) {
+        return ResponseEntity.ok(entryService.buscarPorNome(nome));
+    }
 
     //busca entradas por data
     @GetMapping("/getByDate/{date}")
