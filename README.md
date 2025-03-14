@@ -1,6 +1,6 @@
 # Caixa Controller
 
-## Diagrama de Classes
+## Diagrama de Classes Inicial
 
 ```mermaid
 classDiagram
