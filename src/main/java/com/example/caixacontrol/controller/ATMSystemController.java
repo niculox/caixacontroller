@@ -39,4 +39,25 @@ public class ATMSystemController {
         return ResponseEntity.ok().build();
     }
 
+    //fecha o caixa
+    @GetMapping("/close")
+    public ResponseEntity<?> close() {
+        atmSystemService.fecharCaixa();
+        return ResponseEntity.ok().build();
+    }
+
+    //abre o caixa
+    @GetMapping("/open")
+    public ResponseEntity<?> open() {
+        atmSystemService.abrirCaixa();
+        return ResponseEntity.ok().build();
+    }
+
+    //define o valor inicial do caixa
+    @PostMapping("/setInitial")
+    public ResponseEntity<?> setInitial(@RequestBody float value) {
+        atmSystemService.setCaixaInicial(value);
+        return ResponseEntity.ok().build();
+    }
+
 }

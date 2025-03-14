@@ -8,11 +8,13 @@ import jakarta.transaction.Transactional;
 @Service
 public class ATMSystemService {
 
-    private float totalCaixa = 0;
+    private float caixaAtual;
+    private float caixaInicial;
+    private float caixaFinal;
 
     public void depositar(float valor){
         if (valor > 0) {
-            totalCaixa += valor;
+            caixaAtual += valor;
         } else {
             throw new IllegalArgumentException("O valor do depósito deve ser positivo.");
         }
@@ -21,8 +23,8 @@ public class ATMSystemService {
 
     public void sacar(float valor){
         if (valor > 0) {
-            if (totalCaixa >= valor) {
-                totalCaixa -= valor;
+            if (caixaAtual >= valor) {
+                caixaAtual -= valor;
             } else {
                 throw new IllegalArgumentException("Saldo insuficiente para retirada.");
             }
@@ -32,7 +34,25 @@ public class ATMSystemService {
     }
 
     public void consultarSaldo(){
-        System.out.println("Saldo atual: " + totalCaixa);
+        System.out.println("Saldo atual: " + caixaAtual);
+    }
+
+    public void fecharCaixa(){
+        caixaFinal = caixaAtual;
+        System.out.println("Caixa fechado. Saldo final: " + caixaFinal);
+    }
+
+    public void abrirCaixa(){
+        caixaAtual = caixaInicial;
+        System.out.println("Caixa aberto. Saldo inicial: " + caixaInicial);
+    }
+
+    public void setCaixaInicial(float valor){
+        if (valor >= 0) {
+            caixaInicial = valor;
+        } else {
+            throw new IllegalArgumentException("O valor do caixa inicial deve ser positivo.");
+        }
     }
 
 }
