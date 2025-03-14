@@ -50,11 +50,3 @@ CaixaController é um projeto Spring Boot para gerenciar entradas financeiras. E
    ```
 
 4. Acesse a API em `http://localhost:8080/entry`.
-
-## Contribuição
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
-
-## Licença
-
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
