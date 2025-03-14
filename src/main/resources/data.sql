@@ -14,3 +14,9 @@ CREATE TABLE IF NOT EXISTS ENTRY(
     description TEXT,
     FOREIGN KEY (client_id) REFERENCES Client(id)
 );
+
+CREATE TABLE IF NOT EXISTS ATM_SYSTEM(
+    caixaAtual float,
+    caixaInicial float,
+    caixaFinal float
+);
